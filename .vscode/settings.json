@@ -1,0 +1,70 @@
+{
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk",
+      "command": "latexmk",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-pdf",
+        "-outdir=%OUTDIR%",
+        "%DOC%"
+      ],
+      "env": {}
+    },
+    {
+      "name": "xetex",
+      "command": "xetex",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+      ],
+      "env": {}
+    },
+    {
+      "name": "pdflatex",
+      "command": "pdflatex",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+      ],
+      "env": {}
+    },
+    {
+      "name": "bibtex",
+      "command": "bibtex",
+      "args": [
+        "%DOCFILE%"
+      ],
+      "env": {}
+    }
+  ],
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "latexmk 🔃",
+      "tools": [
+        "latexmk"
+      ]
+    },
+    {
+      "name": "xetex 🔃",
+      "tools": [
+        "xetex"
+      ]
+    },
+    {
+      "name": "pdflatex ➞ bibtex ➞ pdflatex × 2",
+      "tools": [
+        "pdflatex",
+        "bibtex",
+        "pdflatex",
+        "pdflatex"
+      ]
+    }
+  ]
+}
